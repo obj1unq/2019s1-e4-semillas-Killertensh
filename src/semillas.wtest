@@ -124,6 +124,49 @@ test "Misma parcela, si se le plantan 5 sojas  supera la cantidad maxima y gener
 	)
 }
 
+test "Superficie de parcela"{
+	const parcela = new Parcela(ancho = 20 , largo = 1)
+	assert.equals(parcela.superficie() , 20)
+}
+
+test "cantidad Maxima de plantas en parcela"{
+	const parcela = new Parcela(ancho = 20 , largo = 1)
+	assert.equals(parcela.cantMaxDePlantas() , 4)
+}
+
+test "Se planta menta"{
+	const parcela = new Parcela(ancho = 20 , largo = 1,hrsDeSolAlDia = 6)
+	const menta = new Menta(anioObtencion = 1 , altura = 0.3)
+	
+	parcela.plantarUnaPlanta(menta)
+	assert.that(parcela.plantas().contains(menta) )
+}
+
+
+test "Plantas de una parcela"{
+	const parcela = new Parcela(ancho = 20 , largo = 1,hrsDeSolAlDia = 6)
+	const menta = new Menta(anioObtencion = 1 , altura = 0.3)
+	
+	parcela.plantarUnaPlanta(menta)
+	assert.equals(parcela.plantas(),[menta])
+}
+
+
+test "Parcela no tiene complicaciones"{
+	const parcela = new Parcela(ancho = 20 , largo = 1,hrsDeSolAlDia = 6)
+	const menta = new Menta(anioObtencion = 1 , altura = 0.3)
+	
+	parcela.plantarUnaPlanta(menta)
+	assert.notThat(parcela.tieneComplicaciones())
+}
+
+test "Parcela tiene complicaciones"{
+	const parcela = new Parcela(ancho = 20 , largo = 1,hrsDeSolAlDia = 12)
+	const menta = new Menta(anioObtencion = 1 , altura = 0.3)
+	parcela.plantarUnaPlanta(menta)
+	assert.that(parcela.tieneComplicaciones())
+}
+
 test "Parcela ideal para menta"{
 	const parcela = new Parcela(ancho = 20 , largo = 2)
 	const menta = new Menta(anioObtencion = 1 , altura = 0.3)
