@@ -1,4 +1,5 @@
 import semillas.*
+import Parcelas.*
 
 
 test "Horas de sol toleradas por la menta "{
