@@ -1,7 +1,8 @@
 import semillas.*
 import Parcelas.*
 
-
+describe "Tests Etapa 4"{
+ 
 test "Horas de sol toleradas por la menta "{
 	const menta = new Menta(anioObtencion = 1 , altura = 1 )
 	
@@ -229,3 +230,4 @@ test"Parcela industrial se asocia bien a la quinoa"{
 	assert.that(parcela.seAsociaBienA(quinoa))
 }
 
+}
