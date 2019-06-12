@@ -94,7 +94,7 @@ class Parcela {
 		} else return (self.superficie() / 3) + self.largo()
 	}
 
-	method seAsociaBienA(unaPlanta) = null /*Lo defino en la clase correspondiente */
+	method seAsociaBienA(unaPlanta) = null /*Metodo abstacto para ser definido en la subclase como corresponda */
 
 	method tieneComplicaciones() = plantas.any({ planta => planta.hrsDeSolToleradas() < self.hrsDeSolAlDia() })
 
