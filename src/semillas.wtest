@@ -228,4 +228,3 @@ test"Parcela industrial se asocia bien a la quinoa"{
 	assert.that(parcela.seAsociaBienA(quinoa))
 }
 
-
